@@ -19,12 +19,14 @@ const RestaurantSchema = new Schema({
     maxlength: [200, "max 200 chars are allowed for the image"],
   },
   city: {
-    type: String,
+    type: mongoose.Schema.ObjectId,
+    ref: "City",
     required: [true, "Please add a city"],
     maxlength: [100, "max 100 chars are allowed for the city"],
   },
   tag: {
-    type: String,
+    type: mongoose.Schema.ObjectId,
+    ref: "Tag",
     required: [true, "Please add a tag"],
     maxlength: [50, "max 50 chars are allowed for the tag"],
   },
