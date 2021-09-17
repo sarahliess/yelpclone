@@ -2,7 +2,7 @@ const Comment = require("../models/Comment");
 
 const getComments = async (req, res) => {
   try {
-    const comments = await Comment.find().populate("restaurant");
+    const comments = await Comment.find(req.query).populate("restaurant");
     console.log(comments);
     res.json({
       success: true,
