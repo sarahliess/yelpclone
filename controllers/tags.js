@@ -2,7 +2,7 @@ const Tag = require("../models/Tag");
 
 const getTags = async (req, res) => {
   try {
-    const tags = await Tag.find();
+    const tags = await Tag.find(req.query);
     console.log(tags);
     res.json({
       success: true,
