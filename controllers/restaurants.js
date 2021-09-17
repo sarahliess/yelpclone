@@ -2,10 +2,11 @@ const Restaurant = require("../models/Restaurant");
 
 const getRestaurants = async (req, res) => {
   try {
-    const restaurants = await Restaurant.find()
+    console.log(req.query);
+    const restaurants = await Restaurant.find(req.query)
       .populate("city")
       .populate("tag");
-    console.log(restaurants);
+    // console.log(restaurants);
     res.json({
       success: true,
       data: restaurants,
